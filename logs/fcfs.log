@@ -1,0 +1,60 @@
+timestamp,pid,name,old_state,new_state,priority,remaining_ms
+08:55:01.037,–,–,EVENT,–,–,–  |  [MAIN] Starting scheduler. policy=fcfs
+08:55:01.037,–,–,EVENT,–,–,–  |  [SCHED] Initialised — policy=FCFS
+08:55:01.037,–,–,EVENT,–,–,–  |  [CREATE] PID 1 name=TaskA priority=5 burst=200ms
+08:55:01.037,1,TaskA,NEW,READY,5,200
+08:55:01.037,–,–,EVENT,–,–,–  |  [CREATE] PID 2 name=TaskB priority=8 burst=150ms
+08:55:01.037,2,TaskB,NEW,READY,8,150
+08:55:01.037,–,–,EVENT,–,–,–  |  [CREATE] PID 3 name=TaskC priority=3 burst=300ms
+08:55:01.037,3,TaskC,NEW,READY,3,300
+08:55:01.037,–,–,EVENT,–,–,–  |  [CREATE] PID 4 name=TaskD priority=7 burst=100ms
+08:55:01.037,4,TaskD,NEW,READY,7,100
+08:55:01.037,–,–,EVENT,–,–,–  |  [SCHED] Run started — 4 processes
+08:55:01.037,1,TaskA,READY,RUNNING,5,200
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 1 acquiring resource (capacity=4)
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 1 acquired resource after 0 tries (value=100)
+08:55:01.037,1,TaskA,RUNNING,WAITING,5,100
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 1 released resource
+08:55:01.037,–,–,EVENT,–,–,–  |  [IO] PID 1 blocked for 20ms
+08:55:01.037,2,TaskB,READY,RUNNING,8,150
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 2 acquiring resource (capacity=4)
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 2 acquired resource after 0 tries (value=100)
+08:55:01.037,2,TaskB,RUNNING,WAITING,8,50
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 2 released resource
+08:55:01.037,–,–,EVENT,–,–,–  |  [IO] PID 2 blocked for 20ms
+08:55:01.037,1,TaskA,WAITING,READY,5,100
+08:55:01.037,3,TaskC,READY,RUNNING,3,300
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 3 acquiring resource (capacity=4)
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 3 acquired resource after 0 tries (value=100)
+08:55:01.037,3,TaskC,RUNNING,WAITING,3,200
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 3 released resource
+08:55:01.037,–,–,EVENT,–,–,–  |  [IO] PID 3 blocked for 20ms
+08:55:01.037,2,TaskB,WAITING,READY,8,50
+08:55:01.037,4,TaskD,READY,RUNNING,7,100
+08:55:01.037,4,TaskD,RUNNING,TERMINATED,7,0
+08:55:01.037,–,–,EVENT,–,–,–  |  [TERM] PID 4 name=TaskD turnaround=400ms wait=300ms response=300ms
+08:55:01.037,3,TaskC,WAITING,READY,3,200
+08:55:01.037,1,TaskA,READY,RUNNING,5,100
+08:55:01.037,1,TaskA,RUNNING,TERMINATED,5,0
+08:55:01.037,–,–,EVENT,–,–,–  |  [TERM] PID 1 name=TaskA turnaround=500ms wait=200ms response=0ms
+08:55:01.037,2,TaskB,READY,RUNNING,8,50
+08:55:01.037,2,TaskB,RUNNING,TERMINATED,8,0
+08:55:01.037,–,–,EVENT,–,–,–  |  [TERM] PID 2 name=TaskB turnaround=550ms wait=300ms response=100ms
+08:55:01.037,3,TaskC,READY,RUNNING,3,200
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 3 acquiring resource (capacity=4)
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 3 acquired resource after 0 tries (value=100)
+08:55:01.037,3,TaskC,RUNNING,WAITING,3,100
+08:55:01.037,–,–,EVENT,–,–,–  |  [RES] PID 3 released resource
+08:55:01.037,–,–,EVENT,–,–,–  |  [IO] PID 3 blocked for 20ms
+08:55:01.037,3,TaskC,WAITING,READY,3,100
+08:55:01.037,3,TaskC,READY,RUNNING,3,100
+08:55:01.037,3,TaskC,RUNNING,TERMINATED,3,0
+08:55:01.037,–,–,EVENT,–,–,–  |  [TERM] PID 3 name=TaskC turnaround=770ms wait=350ms response=200ms
+08:55:01.037,–,–,EVENT,–,–,–  |  [MQ] Drained 8 unread messages from queue
+08:55:01.037,–,–,EVENT,–,–,–  |  [SCHED] All processes terminated — sim_time=770ms cpu_busy=750ms
+08:55:01.037,–,–,EVENT,–,–,–  |  [STATS] policy=FCFS util=97.4% throughput=5.2 ctx=0
+08:55:01.037,–,–,EVENT,–,–,–  |  [STATS] PID 1 wait=200 turnaround=500 response=0
+08:55:01.037,–,–,EVENT,–,–,–  |  [STATS] PID 2 wait=300 turnaround=550 response=100
+08:55:01.037,–,–,EVENT,–,–,–  |  [STATS] PID 3 wait=350 turnaround=770 response=200
+08:55:01.037,–,–,EVENT,–,–,–  |  [STATS] PID 4 wait=300 turnaround=400 response=300
+08:55:01.037,–,–,EVENT,–,–,–  |  [MAIN] Scheduler exited cleanly

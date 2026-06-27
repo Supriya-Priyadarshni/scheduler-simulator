@@ -1,0 +1,44 @@
+timestamp,pid,name,old_state,new_state,priority,remaining_ms
+08:55:03.818,–,–,EVENT,–,–,–  |  [MAIN] Starting scheduler. policy=prio
+08:55:03.818,–,–,EVENT,–,–,–  |  [SCHED] Initialised — policy=Priority
+08:55:03.818,–,–,EVENT,–,–,–  |  [CREATE] PID 1 name=T1 priority=1 burst=50ms
+08:55:03.818,1,T1,NEW,READY,1,50
+08:55:03.818,–,–,EVENT,–,–,–  |  [CREATE] PID 2 name=T2 priority=2 burst=50ms
+08:55:03.818,2,T2,NEW,READY,2,50
+08:55:03.818,–,–,EVENT,–,–,–  |  [CREATE] PID 3 name=T3 priority=3 burst=50ms
+08:55:03.818,3,T3,NEW,READY,3,50
+08:55:03.818,–,–,EVENT,–,–,–  |  [CREATE] PID 4 name=T4 priority=4 burst=50ms
+08:55:03.818,4,T4,NEW,READY,4,50
+08:55:03.818,–,–,EVENT,–,–,–  |  [CREATE] PID 5 name=T5 priority=5 burst=50ms
+08:55:03.818,5,T5,NEW,READY,5,50
+08:55:03.818,–,–,EVENT,–,–,–  |  [CREATE] PID 6 name=T6 priority=6 burst=50ms
+08:55:03.818,6,T6,NEW,READY,6,50
+08:55:03.818,–,–,EVENT,–,–,–  |  [SCHED] Run started — 6 processes
+08:55:03.818,6,T6,READY,RUNNING,6,50
+08:55:03.818,6,T6,RUNNING,TERMINATED,6,0
+08:55:03.818,–,–,EVENT,–,–,–  |  [TERM] PID 6 name=T6 turnaround=50ms wait=0ms response=0ms
+08:55:03.818,5,T5,READY,RUNNING,5,50
+08:55:03.818,5,T5,RUNNING,TERMINATED,5,0
+08:55:03.818,–,–,EVENT,–,–,–  |  [TERM] PID 5 name=T5 turnaround=100ms wait=50ms response=50ms
+08:55:03.818,4,T4,READY,RUNNING,4,50
+08:55:03.818,4,T4,RUNNING,TERMINATED,4,0
+08:55:03.818,–,–,EVENT,–,–,–  |  [TERM] PID 4 name=T4 turnaround=150ms wait=100ms response=100ms
+08:55:03.818,3,T3,READY,RUNNING,3,50
+08:55:03.818,3,T3,RUNNING,TERMINATED,3,0
+08:55:03.818,–,–,EVENT,–,–,–  |  [TERM] PID 3 name=T3 turnaround=200ms wait=150ms response=150ms
+08:55:03.818,2,T2,READY,RUNNING,2,50
+08:55:03.818,2,T2,RUNNING,TERMINATED,2,0
+08:55:03.818,–,–,EVENT,–,–,–  |  [TERM] PID 2 name=T2 turnaround=250ms wait=200ms response=200ms
+08:55:03.818,1,T1,READY,RUNNING,1,50
+08:55:03.818,1,T1,RUNNING,TERMINATED,1,0
+08:55:03.818,–,–,EVENT,–,–,–  |  [TERM] PID 1 name=T1 turnaround=300ms wait=250ms response=250ms
+08:55:03.818,–,–,EVENT,–,–,–  |  [MQ] Drained 6 unread messages from queue
+08:55:03.818,–,–,EVENT,–,–,–  |  [SCHED] All processes terminated — sim_time=300ms cpu_busy=300ms
+08:55:03.818,–,–,EVENT,–,–,–  |  [STATS] policy=Priority util=100.0% throughput=20.0 ctx=0
+08:55:03.818,–,–,EVENT,–,–,–  |  [STATS] PID 1 wait=250 turnaround=300 response=250
+08:55:03.818,–,–,EVENT,–,–,–  |  [STATS] PID 2 wait=200 turnaround=250 response=200
+08:55:03.818,–,–,EVENT,–,–,–  |  [STATS] PID 3 wait=150 turnaround=200 response=150
+08:55:03.818,–,–,EVENT,–,–,–  |  [STATS] PID 4 wait=100 turnaround=150 response=100
+08:55:03.818,–,–,EVENT,–,–,–  |  [STATS] PID 5 wait=50 turnaround=100 response=50
+08:55:03.818,–,–,EVENT,–,–,–  |  [STATS] PID 6 wait=0 turnaround=50 response=0
+08:55:03.818,–,–,EVENT,–,–,–  |  [MAIN] Scheduler exited cleanly

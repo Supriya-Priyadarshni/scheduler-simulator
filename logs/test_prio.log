@@ -1,0 +1,33 @@
+timestamp,pid,name,old_state,new_state,priority,remaining_ms
+08:55:03.814,–,–,EVENT,–,–,–  |  [MAIN] Starting scheduler. policy=prio
+08:55:03.814,–,–,EVENT,–,–,–  |  [SCHED] Initialised — policy=Priority
+08:55:03.814,–,–,EVENT,–,–,–  |  [CREATE] PID 1 name=LowPri priority=2 burst=100ms
+08:55:03.814,1,LowPri,NEW,READY,2,100
+08:55:03.814,–,–,EVENT,–,–,–  |  [CREATE] PID 2 name=MidPri priority=5 burst=150ms
+08:55:03.814,2,MidPri,NEW,READY,5,150
+08:55:03.814,–,–,EVENT,–,–,–  |  [CREATE] PID 3 name=HighPri priority=9 burst=80ms
+08:55:03.814,3,HighPri,NEW,READY,9,80
+08:55:03.814,–,–,EVENT,–,–,–  |  [SCHED] Run started — 3 processes
+08:55:03.814,3,HighPri,READY,RUNNING,9,80
+08:55:03.814,3,HighPri,RUNNING,TERMINATED,9,0
+08:55:03.814,–,–,EVENT,–,–,–  |  [TERM] PID 3 name=HighPri turnaround=80ms wait=0ms response=0ms
+08:55:03.814,2,MidPri,READY,RUNNING,5,150
+08:55:03.814,–,–,EVENT,–,–,–  |  [RES] PID 2 acquiring resource (capacity=3)
+08:55:03.814,–,–,EVENT,–,–,–  |  [RES] PID 2 acquired resource after 0 tries (value=100)
+08:55:03.814,2,MidPri,RUNNING,WAITING,5,50
+08:55:03.814,–,–,EVENT,–,–,–  |  [RES] PID 2 released resource
+08:55:03.814,–,–,EVENT,–,–,–  |  [IO] PID 2 blocked for 20ms
+08:55:03.814,1,LowPri,READY,RUNNING,2,100
+08:55:03.814,1,LowPri,RUNNING,TERMINATED,2,0
+08:55:03.814,–,–,EVENT,–,–,–  |  [TERM] PID 1 name=LowPri turnaround=280ms wait=180ms response=180ms
+08:55:03.814,2,MidPri,WAITING,READY,5,50
+08:55:03.814,2,MidPri,READY,RUNNING,5,50
+08:55:03.814,2,MidPri,RUNNING,TERMINATED,5,0
+08:55:03.814,–,–,EVENT,–,–,–  |  [TERM] PID 2 name=MidPri turnaround=330ms wait=80ms response=80ms
+08:55:03.814,–,–,EVENT,–,–,–  |  [MQ] Drained 4 unread messages from queue
+08:55:03.814,–,–,EVENT,–,–,–  |  [SCHED] All processes terminated — sim_time=330ms cpu_busy=330ms
+08:55:03.814,–,–,EVENT,–,–,–  |  [STATS] policy=Priority util=100.0% throughput=9.1 ctx=0
+08:55:03.814,–,–,EVENT,–,–,–  |  [STATS] PID 1 wait=180 turnaround=280 response=180
+08:55:03.814,–,–,EVENT,–,–,–  |  [STATS] PID 2 wait=80 turnaround=330 response=80
+08:55:03.814,–,–,EVENT,–,–,–  |  [STATS] PID 3 wait=0 turnaround=80 response=0
+08:55:03.814,–,–,EVENT,–,–,–  |  [MAIN] Scheduler exited cleanly

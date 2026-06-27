@@ -1,0 +1,56 @@
+Mini Process Scheduler — Test Report
+==================================================
+
+[PASS] Round Robin — Mixed Priorities
+  OK: FSM Validity
+      Binary ran in 0.00s, 36 transitions logged.
+      All 36 transitions are valid.
+  OK: All Processes Terminate
+      All 4 processes terminated.
+  OK: No Return to NEW
+      No process returned to NEW state.
+  OK: Per-Process State Sequence
+      PID 1 (TaskA): NEW → READY → RUNNING → READY → RUNNING → WAITING → READY → RUNNING → READY → RUNNING → TERMINATED
+      PID 2 (TaskB): NEW → READY → RUNNING → READY → RUNNING → WAITING → READY → RUNNING → TERMINATED
+      PID 3 (TaskC): NEW → READY → RUNNING → READY → RUNNING → WAITING → READY → RUNNING → READY → RUNNING → WAITING → READY → RUNNING → TERMINATED
+      PID 4 (TaskD): NEW → READY → RUNNING → READY → RUNNING → TERMINATED
+
+[PASS] Priority — Highest First
+  OK: FSM Validity
+      Binary ran in 0.00s, 12 transitions logged.
+      All 12 transitions are valid.
+  OK: All Processes Terminate
+      All 3 processes terminated.
+  OK: No Return to NEW
+      No process returned to NEW state.
+  OK: Per-Process State Sequence
+      PID 1 (LowPri): NEW → READY → RUNNING → TERMINATED
+      PID 2 (MidPri): NEW → READY → RUNNING → WAITING → READY → RUNNING → TERMINATED
+      PID 3 (HighPri): NEW → READY → RUNNING → TERMINATED
+
+[PASS] Single Process
+  OK: FSM Validity
+      Binary ran in 0.00s, 3 transitions logged.
+      All 3 transitions are valid.
+  OK: All Processes Terminate
+      All 1 processes terminated.
+  OK: No Return to NEW
+      No process returned to NEW state.
+  OK: Per-Process State Sequence
+      PID 1 (Solo): NEW → READY → RUNNING → TERMINATED
+
+[PASS] Many Short Tasks
+  OK: FSM Validity
+      Binary ran in 0.00s, 18 transitions logged.
+      All 18 transitions are valid.
+  OK: All Processes Terminate
+      All 6 processes terminated.
+  OK: No Return to NEW
+      No process returned to NEW state.
+  OK: Per-Process State Sequence
+      PID 1 (T1): NEW → READY → RUNNING → TERMINATED
+      PID 2 (T2): NEW → READY → RUNNING → TERMINATED
+      PID 3 (T3): NEW → READY → RUNNING → TERMINATED
+      PID 4 (T4): NEW → READY → RUNNING → TERMINATED
+      PID 5 (T5): NEW → READY → RUNNING → TERMINATED
+      PID 6 (T6): NEW → READY → RUNNING → TERMINATED

@@ -1,0 +1,14 @@
+timestamp,pid,name,old_state,new_state,priority,remaining_ms
+08:55:03.816,–,–,EVENT,–,–,–  |  [MAIN] Starting scheduler. policy=rr
+08:55:03.816,–,–,EVENT,–,–,–  |  [SCHED] Initialised — policy=Round Robin
+08:55:03.816,–,–,EVENT,–,–,–  |  [CREATE] PID 1 name=Solo priority=5 burst=75ms
+08:55:03.816,1,Solo,NEW,READY,5,75
+08:55:03.816,–,–,EVENT,–,–,–  |  [SCHED] Run started — 1 processes
+08:55:03.816,1,Solo,READY,RUNNING,5,75
+08:55:03.816,1,Solo,RUNNING,TERMINATED,5,0
+08:55:03.816,–,–,EVENT,–,–,–  |  [TERM] PID 1 name=Solo turnaround=75ms wait=0ms response=0ms
+08:55:03.816,–,–,EVENT,–,–,–  |  [MQ] Drained 2 unread messages from queue
+08:55:03.816,–,–,EVENT,–,–,–  |  [SCHED] All processes terminated — sim_time=75ms cpu_busy=75ms
+08:55:03.816,–,–,EVENT,–,–,–  |  [STATS] policy=Round Robin util=100.0% throughput=13.3 ctx=0
+08:55:03.816,–,–,EVENT,–,–,–  |  [STATS] PID 1 wait=0 turnaround=75 response=0
+08:55:03.816,–,–,EVENT,–,–,–  |  [MAIN] Scheduler exited cleanly
